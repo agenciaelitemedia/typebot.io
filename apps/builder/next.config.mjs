@@ -38,7 +38,7 @@ const nextConfig = {
     '@typebot.io/env',
   ],
   i18n: {
-    defaultLocale: 'en',
+    defaultLocale: 'pt-BR',
     locales: ['en', 'fr', 'pt', 'pt-BR', 'de', 'ro', 'es', 'it'],
   },
   experimental: {
@@ -58,19 +58,6 @@ const nextConfig = {
     config.resolve.alias['got'] = false
     config.resolve.alias['openai'] = false
     return config
-  },
-  headers: async () => {
-    return [
-      {
-        source: '/(.*)?',
-        headers: [
-          {
-            key: 'X-Frame-Options',
-            value: 'SAMEORIGIN',
-          },
-        ],
-      },
-    ]
   },
   async rewrites() {
     return process.env.NEXT_PUBLIC_POSTHOG_KEY
